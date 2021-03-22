@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #more {
+            display: none;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Style the container/contact section */
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+
+        /* Create two columns that float next to eachother */
+        .column {
+            float: left;
+            width: 50%;
+            margin-top: 6px;
+            padding: 20px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+
+            .column,
+            input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+
+        .site-footer {
+            background-color: #3c3f4d;
+            padding: 45px 0 20px;
+            font-size: 15px;
+            line-height: 24px;
+            color: #737373;
+        }
+
+        s .site-footer .social-icons {
+            text-align: right
+        }
+
+        .site-footer .social-icons a {
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            margin-left: 6px;
+            margin-right: 0;
+            border-radius: 100%;
+            background-color: #33353d
+        }
+
+        @media (max-width:991px) {
+            .site-footer [class^=col-] {
+                margin-bottom: 30px
+            }
+        }
+
+        @media (max-width:767px) {
+            .site-footer {
+                padding-bottom: 0
+            }
+
+            .site-footer .copyright-text,
+            .site-footer .social-icons {
+                text-align: center
+            }
+        }
+
+        .social-icons {
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none
+        }
+
+        .social-icons li {
+            display: inline-block;
+            margin-bottom: 4px
+        }
+
+        .social-icons a {
+            background-color: #eceeef;
+            color: #ffffff;
+            font-size: 24px;
+            display: inline-block;
+            line-height: 44px;
+            width: 44px;
+            height: 44px;
+            text-align: center;
+            margin-right: 8px;
+            border-radius: 100%;
+            -webkit-transition: all .2s linear;
+            -o-transition: all .2s linear;
+            transition: all .2s linear
+        }
+
+        .social-icons a:active,
+        .social-icons a:focus,
+        .social-icons a:hover {
+            color: #fff;
+            background-color: #29aafe
+        }
+
+        .social-icons.size-sm a {
+            line-height: 34px;
+            height: 34px;
+            width: 34px;
+            font-size: 14px
+        }
+
+        .social-icons a.facebook:hover {
+            background-color: #3b5998
+        }
+        
+        .social-icons a.google:hover {
+            background-color: #b42727
+        }
+
+        .social-icons a.youtube:hover {
+            background-color: #fd0404
+        }
+
+        .social-icons a.skype:hover {
+            background-color: #00ccff
+        }
+
+        @media (max-width:767px) {
+            .social-icons li.title {
+                display: block;
+                margin-right: 0;
+                font-weight: 600
+            }
+        }
+    </style>
+    <script>
+        function myFunction() {
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("myBtn");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read less";
+                moreText.style.display = "inline";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+        <a class="navbar-brand" href="index.html">Photographer</a>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="aboutus.html">About us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contactus.html">Contact Us</a>
+            </li>
+        </ul>
+        <form class="form-inline" action="/action_page.php">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-success" type="submit">Search</button>
+        </form>
+    </nav>
+
+
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="image/img1.jpg">
+                <div class="carousel-caption">
+                    <h3>Welcome to my Photography studio</h3>
+                    <p>
+                        Photos provide a more emotional attachment than words often do. They often capture the
+                        atmosphere that I cannot find the words for.
+                    </p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="image/img2.jpg">
+                <div class="carousel-caption">
+                    <h3>My black cat</h3>
+                    <p>
+                        I have a cute cat. I fed it from when it was young. Her name is Miu. Miu has a yellow coat with
+                        a short chase
+                    </p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="image/img3.jpg">
+                <div class="carousel-caption">
+                    <h3>My black cat</h3>
+                    <p>
+                        I have a cute cat. I fed it from when it was young. Her name is Miu. Miu has a yellow coat with
+                        a short chase
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+
+    <section id="about">
+        <br>
+        <h1 style="text-align: center;">About us</h1>
+        <hr class="w-100">
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <br>
+                    <img src="image/DucThang.png" width="400" height="450">
+                </div>
+
+                <div class="col">
+                    <br>
+                    <h2>Photography</h2>
+                    <p>
+                    <p>Photography is my favorite hobby. It refreshes the mind and provides a welcome change from such
+                        dull and dreary routine of daily life. . I am particularly interested in capturing landscapes,
+                        especially during twilight.<span id="dots">...</span><span id="more">Photography teaches me a
+                            lot of useful things. I have to take all aspects of things into consideration. I have to
+                            look from all directions to capture a picture. Color combination is also a very important
+                            factor. While taking pictures of animals or birds I have to wait for hours and I learned
+                            about patience.
+
+                            Photos provide a more emotional attachment than words often do. They often capture the
+                            atmosphere that I cannot find the words for.
+
+                            Photographs, perhaps more than anything to me, I believe that they are the documentations of
+                            our lives. The ability of photography to connect to our past, associate us in an event, and
+                            preserve memories without words or interpretation makes it an influential hobby for all of
+                            us.
+
+                            
+                        </span></p>
+
+                    <button onclick="myFunction()" id="myBtn" type="button" class="btn btn-primary">Read more</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="video">
+        <br>
+        <h1 style="text-align: center;">Video</h1>
+        <hr class="w-100">
+
+        <video width="100%" controls>
+            <source src="video/video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <br>
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div style="text-align: center;">
+            <ul class="social-icons">
+                <li><a class="facebook" href="https://facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="google" href="https://google.com/"><i class="fa fa-google"></i></a></li>
+                <li><a class="youtube" href="https://youtube.com/"><i class="fa fa-youtube"></i></a></li>
+                <li><a class="skype" href="https://skype.com/"><i class="fa fa-skype"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
